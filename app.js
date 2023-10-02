@@ -15,8 +15,15 @@ app.get("/", (req, res) => {
 
 app.post("/update-time", (req, res) => {
   const { localTime, timeZone } = req.body;
-  const zuluTime = moment.utc(localTime).format("MM-DD-YYYY HH:mm:ss");
-  const dayOfWeek = moment(localTime).format("dddd");
+
+  // Parse the local time in the given time zone
+  const localMoment = moment.tz(localTime, "MM-DD-YYYY HH:mm:ss", timeZone);
+
+  // Convert to Zulu time (UTC)
+  const zuluTime = localMoment.utc().format("MM-DD-YYYY HH:mm:ss");
+
+  // Get the day of the week
+  const dayOfWeek = localMoment.format("dddd");
 
   res.json({ localTime, zuluTime, dayOfWeek, timeZone });
 });
