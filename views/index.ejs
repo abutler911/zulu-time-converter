@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zulu Time Conversion</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
   </head>
   <body>
-    <h1>Zulu Time Conversion</h1>
+    <h1><%= localTime %></h1>
+
+    <div class="info-grid">
+      <div>
+        <span>Your Local Time Zone: </span><span><%= localTimeZone %></span>
+      </div>
+      <div><span>Day of the Week: </span><span><%= dayOfWeek %></span></div>
+      <div><span>Zulu Time: </span><span><%= zuluTime %></span></div>
+    </div>
   </body>
 </html>

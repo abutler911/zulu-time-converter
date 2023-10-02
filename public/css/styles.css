@@ -1,0 +1,11 @@
+body {
+  background-color: red;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
