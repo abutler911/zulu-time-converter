@@ -33,6 +33,7 @@ function updateTime() {
       document.getElementById("zuluTime").innerText = data.zuluTime;
       document.getElementById("dayOfWeek").innerText = data.dayOfWeek;
       document.getElementById("localTimeZone").innerText = data.timeZone;
+      document.getElementById("currentMonth").innerText = data.currentMonth; // New line
     });
 }
 

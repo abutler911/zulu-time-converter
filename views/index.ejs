@@ -13,15 +13,19 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
   </head>
   <body>
-    <h1 id="localTime" style="font-size: 3em; text-align: center"></h1>
+    <h1>Zulu Time Converter</h1>
+    <h2 id="localTime" style="font-size: 3em; text-align: center"></h2>
 
     <div class="info-grid">
-      <div>
-        <span>Your Local Time Zone: </span><span id="localTimeZone"></span>
-      </div>
-      <div><span>Day of the Week: </span><span id="dayOfWeek"></span></div>
+      <div><span>Local Time Zone: </span><span id="localTimeZone"></span></div>
+      <div><span>Current Day: </span><span id="dayOfWeek"></span></div>
       <div><span>Zulu Time: </span><span id="zuluTime"></span></div>
+      <div>
+        <!-- New div -->
+        <span>Current Month: </span><span id="currentMonth"></span>
+      </div>
     </div>
+
     <script type="module" src="/js/app.js"></script>
   </body>
 </html>

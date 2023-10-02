@@ -5,14 +5,24 @@ body {
   padding: 0;
 }
 
-h1 {
-  background: linear-gradient(120deg, #00c6ff, #0072ff);
+h1,
+h2 {
+  background: linear-gradient(120deg, #ff00cc, #333399);
   color: white;
   margin: 0;
   padding: 20px;
   text-align: center;
-  font-size: 3em;
+  text-shadow: 3px 3px 5px #000;
   animation: gradient 3s ease infinite;
+}
+
+h1 {
+  font-size: 4em;
+  animation: gradient 5s ease infinite, bounceIn 2s ease;
+}
+
+h2 {
+  font-size: 3em;
 }
 
 @keyframes gradient {
@@ -30,12 +40,29 @@ h1 {
   gap: 20px;
   text-align: center;
   font-size: 1.5em;
-  background-color: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9),
+    rgba(240, 240, 240, 0.9)
+  );
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   margin: 20px;
   animation: fadeIn 2s ease-out, bounceIn 1s ease;
+}
+
+.info-grid div {
+  padding: 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-grid div:hover {
+  background-color: rgba(0, 128, 128, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -49,13 +76,12 @@ h1 {
 
 @keyframes bounceIn {
   0% {
-    transform: scale(0.3);
-  }
-  50% {
-    transform: scale(1.1);
+    transform: scale(0.9);
+    opacity: 0.1;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
