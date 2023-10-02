@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zulu Time Conversion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
   </head>
   <body>
-    <h1><%= localTime %></h1>
+    <h1 id="localTime" style="font-size: 3em; text-align: center"></h1>
 
     <div class="info-grid">
       <div>
-        <span>Your Local Time Zone: </span><span><%= localTimeZone %></span>
+        <span>Your Local Time Zone: </span><span id="localTimeZone"></span>
       </div>
-      <div><span>Day of the Week: </span><span><%= dayOfWeek %></span></div>
-      <div><span>Zulu Time: </span><span><%= zuluTime %></span></div>
+      <div><span>Day of the Week: </span><span id="dayOfWeek"></span></div>
+      <div><span>Zulu Time: </span><span id="zuluTime"></span></div>
     </div>
+    <script type="module" src="/js/app.js"></script>
   </body>
 </html>

@@ -4,16 +4,21 @@ const momentTimezone = require("moment-timezone");
 
 const app = express();
 
-app.set("view engine", "ejs");
+app.use(express.json());
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  const localTime = moment().format("MM-DD-YYYY HH:mm:ss");
-  const zuluTime = moment.utc().format("YYYY-MM-DD HH:mm:ss");
-  const dayOfWeek = moment().format("dddd");
-  const localTimeZone = moment.tz.guess();
+app.set("view engine", "ejs");
 
-  res.render("index", { localTime, zuluTime, dayOfWeek, localTimeZone });
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.post("/update-time", (req, res) => {
+  const { localTime, timeZone } = req.body;
+  const zuluTime = moment.utc(localTime).format("MM-DD-YYYY HH:mm:ss");
+  const dayOfWeek = moment(localTime).format("dddd");
+
+  res.json({ localTime, zuluTime, dayOfWeek, timeZone });
 });
 
 app.listen(3000, () => {
