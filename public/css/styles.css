@@ -48,8 +48,8 @@ h2 {
   border-radius: 15px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: pulseAndChangeColor 5s infinite ease;
 }
-
 .info-grid div:hover {
   background-color: rgba(255, 0, 204, 0.2);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -73,6 +73,21 @@ h2 {
   color: #fff;
   animation: zoomInFromLeft 3s forwards;
   margin-top: 10px;
+}
+
+@keyframes pulseAndChangeColor {
+  0% {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgba(255, 0, 204, 0.2);
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1);
+  }
 }
 
 @keyframes zoomInFromLeft {
