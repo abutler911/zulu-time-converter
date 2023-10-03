@@ -1,17 +1,27 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --dark-blue: #003f5c;
+  --purple: #58508d;
+  --blue-green: #008585;
+  --green: #16a070;
+  --orange: #ffa600;
+}
+
 body {
   font-family: "VT323", monospace;
-  background: linear-gradient(120deg, #333399, #ff00cc);
+  background: var(--dark-blue);
   background-size: 200% 200%;
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: var(--white);
   padding-bottom: 20px;
 }
 
 h1,
 h2 {
-  background: linear-gradient(120deg, #000000, #333399);
+  background: var(--green);
   color: white;
   margin: 0;
   padding: 20px;
@@ -34,7 +44,7 @@ h2 {
   gap: 20px;
   text-align: center;
   font-size: 1.5em;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--blue-green);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -67,7 +77,7 @@ h2 {
   position: fixed;
   left: -100%;
   bottom: 10px;
-  background: rgba(4, 129, 52, 0.1);
+  background: var(--green);
   padding: 10px;
   border-radius: 15px;
   color: #fff;
@@ -77,15 +87,15 @@ h2 {
 
 @keyframes pulseAndChangeColor {
   0% {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
     transform: scale(1);
   }
   50% {
-    background-color: rgba(255, 0, 204, 0.2);
+    background-color: rgba(255, 0, 204, 0.7);
     transform: scale(1.05);
   }
   100% {
-    background-color: rgba(22, 175, 43, 0.1);
+    background-color: rgba(22, 175, 43, 0.5);
     transform: scale(1);
   }
 }
