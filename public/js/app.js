@@ -1,4 +1,5 @@
-const userLocalTime = new Date().toLocaleString();
+const userLocalTime = new Date().toLocaleString("en-US", { hour12: true });
+
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 fetch("/update-time", {

@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 
 app.post("/update-time", (req, res) => {
   const { localTime, timeZone } = req.body;
-  const localMoment = moment.tz(localTime, "MM-DD-YYYY HH:mm:ss", timeZone);
+  const localMoment = moment.tz(localTime, "MM-DD-YYYY hh:mm:ss A", timeZone);
   const zuluTime = localMoment.utc().format("MM-DD-YYYY HH:mm:ss");
   const dayOfWeek = localMoment.format("dddd");
   const currentMonth = localMoment.format("MMMM");
