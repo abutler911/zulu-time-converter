@@ -22,6 +22,6 @@ app.post("/update-time", (req, res) => {
   res.json({ localTime, zuluTime, dayOfWeek, timeZone, currentMonth });
 });
 
-app.listen(3000, () => {
+app.listen(8080, () => {
   console.log("Server running on http://localhost:3000");
 });
