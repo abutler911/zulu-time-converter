@@ -57,7 +57,7 @@ h2 {
 }
 .info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
   text-align: center;
   font-size: 1.1em;
@@ -88,7 +88,12 @@ h2 {
   color: #fff;
   text-shadow: 2px 2px 4px #000;
 }
-
+#currentMonth,
+#localTimeZone,
+#dayOfWeek,
+#zuluTime {
+  font-size: 2rem;
+}
 .footer {
   text-align: center;
   font-size: 1.2em;
