@@ -6,12 +6,9 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static("public"));
-
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.get("/", (req, res) => res.render("index"));
 
 app.post("/update-time", (req, res) => {
   const { localTime, timeZone } = req.body;
@@ -22,6 +19,4 @@ app.post("/update-time", (req, res) => {
   res.json({ localTime, zuluTime, dayOfWeek, timeZone, currentMonth });
 });
 
-app.listen(8080, () => {
-  console.log("Server running on http://localhost:3000");
-});
+app.listen(8080, () => console.log("Server running on http://localhost:8080"));
