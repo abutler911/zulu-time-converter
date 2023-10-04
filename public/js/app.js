@@ -43,3 +43,24 @@ updateTime();
 
 // Update time every second
 setInterval(updateTime, 1000);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const isDarkMode = localStorage.getItem("darkMode");
+
+  if (isDarkMode === "enabled") {
+    document.body.classList.add("dark-mode");
+    document.querySelector("#.info-grid").classList.add("dark-mode");
+  }
+
+  const darkModeBtn = document.getElementById("dark-mode-btn");
+  darkModeBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("#.info-grid").classList.toggle("dark-mode");
+
+    const isDarkMode = document.body.classList.contains("dark-mode")
+      ? "enabled"
+      : "disabled";
+    localStorage.setItem("darkMode", isDarkMode);
+  });
+});
