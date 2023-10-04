@@ -2,22 +2,23 @@
   --black: #000000;
   --white: #ffffff;
   --dark-blue: #003f5c;
-  --purple: #58508d;
   --blue-green: #008585;
-  --green: #16a070;
-  --orange: #ffa600;
 }
-.dark-mode {
-  background-color: black !important;
-  border: 2px solid #fff;
+
+body,
+h1,
+h2,
+.info-grid,
+.info-grid div {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-shadow: 3px 3px 5px #000;
 }
+
 body {
   font-family: "VT323", monospace;
   background: var(--dark-blue);
-  background-size: 200% 200%;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
   color: var(--white);
   padding-bottom: 20px;
 }
@@ -25,18 +26,14 @@ body {
 h1,
 h2 {
   background: var(--black);
-  color: white;
-  margin: 0;
+  color: var(--white);
   padding: 20px;
-  text-align: center;
-  text-shadow: 3px 3px 5px #000;
-  animation: gradient 5s ease infinite, bounceIn 2s ease;
+  animation: gradient 5s infinite ease, bounceIn 2s ease;
 }
 
 h1 {
   font-size: 4em;
 }
-
 h2 {
   font-size: 3em;
 }
@@ -45,22 +42,28 @@ h2 {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 1;
-  cursor: pointer;
-  background-color: #000;
+  background: var(--black);
+  color: var(--white);
   padding: 5px;
-  text-decoration: none;
-  color: #fff;
   font-size: 1.2rem;
   border-radius: 5px;
+  cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
+
+#dark-mode-btn:hover {
+  background: var(--blue-green);
+}
+
+.dark-mode {
+  background-color: black !important;
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  text-align: center;
-  font-size: 1.1em;
   background: var(--blue-green);
   padding: 10px;
   border-radius: 10px;
@@ -84,30 +87,28 @@ h2 {
   transform: scale(1.05);
 }
 
-.info-grid span {
-  color: #fff;
-  text-shadow: 2px 2px 4px #000;
-}
+.info-grid span,
 #currentMonth,
 #localTimeZone,
 #dayOfWeek,
 #zuluTime {
+  color: var(--white);
   font-size: 2rem;
 }
+
 .footer {
   text-align: center;
   font-size: 1.2em;
   position: fixed;
   left: -100%;
   bottom: 10px;
-  color: #fff;
+  color: var(--white);
   animation: zoomInFromLeft 3s forwards;
-  margin-top: 10px;
 }
 
 .footer a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   font-size: 1.4rem;
 }
 
