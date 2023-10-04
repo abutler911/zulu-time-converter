@@ -7,13 +7,9 @@
   --green: #16a070;
   --orange: #ffa600;
 }
-body.dark-mode {
-  background: var(--black);
-  color: var(--white);
-}
-
-.info-grid.dark-mode {
-  background: var(--green);
+.dark-mode {
+  background-color: black !important;
+  border: 2px solid #fff;
 }
 body {
   font-family: "VT323", monospace;
@@ -95,14 +91,19 @@ h2 {
 
 .footer {
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.2em;
   position: fixed;
   left: -100%;
   bottom: 10px;
-  text-decoration: none;
   color: #fff;
   animation: zoomInFromLeft 3s forwards;
   margin-top: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
 }
 
 @keyframes pulseAndChangeColor {

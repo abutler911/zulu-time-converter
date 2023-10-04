@@ -1,5 +1,4 @@
 const userLocalTime = new Date().toLocaleString("en-US", { hour12: true });
-
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 fetch("/update-time", {
@@ -45,18 +44,23 @@ updateTime();
 setInterval(updateTime, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
+  const elementsToDarken = [
+    document.body,
+    document.querySelector(".info-grid"),
+    ...document.querySelectorAll(".info-grid div"),
+  ];
+
   const isDarkMode = localStorage.getItem("darkMode");
 
   if (isDarkMode === "enabled") {
-    document.body.classList.add("dark-mode");
-    document.querySelector("#.info-grid").classList.add("dark-mode");
+    elementsToDarken.forEach((el) => el.classList.add("dark-mode"));
   }
 
   const darkModeBtn = document.getElementById("dark-mode-btn");
+
   darkModeBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    document.body.classList.toggle("dark-mode");
-    document.querySelector("#.info-grid").classList.toggle("dark-mode");
+    elementsToDarken.forEach((el) => el.classList.toggle("dark-mode"));
 
     const isDarkMode = document.body.classList.contains("dark-mode")
       ? "enabled"
